@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "istanbul cover _mocha"
+    "test": "istanbul cover _mocha",
+    "prod": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'",
+    "kill": "pm2 kill"
   },
   "dependencies": {
     "config-lite": "^2.1.0",
@@ -26,10 +28,12 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "cross-env": "^5.2.1",
     "eslint": "^6.3.0",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
+    "pm2": "^3.5.1",
     "supertest": "^4.0.2"
   }
 }
