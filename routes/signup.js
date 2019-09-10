@@ -15,16 +15,11 @@ router.get('/', checkNotLogin, function(req, res, next) {
 // POST /signup 用户注册
 router.post('/', checkNotLogin, function(req, res, next) {
   const name = req.fields.name;
-  const gender =
-    typeof req.fields.gender === 'string'
-      ? req.fields.gender
-      : req.fields.gender.join('');
+  const gender = typeof req.fields.gender === 'string' ? req.fields.gender : '';
   const bio = req.fields.bio;
   const avatar = req.files.avatar.path.split(path.sep).pop();
   let password =
-    typeof req.fields.password === 'string'
-      ? req.fields.password
-      : req.fields.password.join('');
+    typeof req.fields.password === 'string' ? req.fields.password : '';
   const repassword = req.fields.repassword;
 
   // 校验参数
