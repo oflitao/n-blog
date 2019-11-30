@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
 app.use(
   expressWinston.logger({
     transports: [
-      new winston.transports.Console(),
+      // new winston.transports.Console(),
       new winston.transports.File({
         filename: 'logs/success.log'
       })
